@@ -21,6 +21,15 @@ public class FafUserDetails extends org.springframework.security.core.userdetail
     this.id = id;
   }
 
+  public static boolean hasPermission(com.yahoo.elide.security.User user, String permission) {
+    if (user != null && user.getOpaqueUser() instanceof FafUserDetails) {
+      FafUserDetails userDetails = (FafUserDetails) user.getOpaqueUser();
+      return userDetails.hasPermission("permissions.all");
+    } else {
+      return false;
+    }
+  }
+  
   public boolean hasPermission(String permission) {
     Collection<GrantedAuthority> authorities = this.getAuthorities();
 

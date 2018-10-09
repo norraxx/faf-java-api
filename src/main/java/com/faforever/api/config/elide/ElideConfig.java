@@ -8,7 +8,9 @@ import com.faforever.api.data.checks.IsInAwaitingState;
 import com.faforever.api.data.checks.permission.HasBanRead;
 import com.faforever.api.data.checks.permission.HasBanUpdate;
 import com.faforever.api.data.checks.permission.HasLadder1v1Update;
+import com.faforever.api.data.checks.permission.HiddenGroupFilter;
 import com.faforever.api.data.checks.permission.IsModerator;
+import com.faforever.api.data.checks.permission.IsUserAdministrator;
 import com.faforever.api.security.ExtendedAuditLogger;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.yahoo.elide.Elide;
@@ -101,6 +103,8 @@ public class ElideConfig {
     checks.put(BooleanChange.TO_FALSE_EXPRESSION, BooleanChange.ToFalse.class);
     checks.put(BooleanChange.TO_TRUE_EXPRESSION, BooleanChange.ToTrue.class);
     checks.put(IsInAwaitingState.EXPRESSION, IsInAwaitingState.Inline.class);
+    checks.put(IsUserAdministrator.EXPRESSION, IsUserAdministrator.Inline.class);
+    checks.put(HiddenGroupFilter.EXPRESSION, HiddenGroupFilter.class);
     return new EntityDictionary(checks);
   }
 }
