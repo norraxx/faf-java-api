@@ -91,7 +91,9 @@ public enum ErrorCode {
   VOTING_CHOICE_DOES_NOT_EXIST(181, "Invalid choice", "There is no voting choice with the ID ''{0}''."),
   STEAM_ID_ALREADY_LINKED(182, " Steam account already linked to a FAF account", "You linked this account already to user with name ''{0}''."),
   MAP_NAME_INVALID(183, "Map name invalid", "The name of the map in the scenario file can only contain printable ASCII characters and blanks."),
-  MOD_NAME_INVALID(184, "Mod name invalid", "The name of the mod in the scenario file can only contain printable ASCII characters and blanks.");
+  MOD_NAME_INVALID(184, "Mod name invalid", "The name of the mod in the scenario file can only contain printable ASCII characters and blanks."),
+  INVALID_FEATURED_MOD(185, "Invalid featured mod name", "The featured mod name ''{0}'' is not allowed in this context."),
+  API_KEY_INVALID(185, "Api key is invalid", "The api key is invalid.");
 
 
   private final int code;
